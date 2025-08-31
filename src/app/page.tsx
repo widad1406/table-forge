@@ -24,7 +24,7 @@ export default function Home() {
             </Button>
             <Button asChild variant="outline" size="lg">
               <Link
-                href="https://github.com/"
+                href="https://github.com/AnmolSaini16/table-forge"
                 target="_blank"
                 rel="noopener noreferrer"
               >
