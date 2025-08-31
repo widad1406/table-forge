@@ -1,39 +1,94 @@
+# TableForge — Copy‑paste Tailwind Table Examples
 
-<img width="1200" height="630" alt="showcase" src="https://github.com/user-attachments/assets/6a665630-7116-4cb7-a9af-7b3b4a24c25b" />
+Ready-to-use, accessible table components built with Next.js and Tailwind CSS. Browse examples, preview variations, and copy the JSX in one click.
 
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+> Add your screenshots below. The first image is already using `public/og_image.png`. Replace or add more under `public/screenshots/`.
+
+<!-- Screenshots -->
+<p align="center">
+  <img src="public/og_image.png" alt="TableForge preview" width="900" />
+</p>
+
+<!-- Add more screenshots in a simple grid -->
+<p align="center">
+  <img src="public/screenshots/01.png" alt="Screenshot 1" width="280" />
+  <img src="public/screenshots/02.png" alt="Screenshot 2" width="280" />
+  <img src="public/screenshots/03.png" alt="Screenshot 3" width="280" />
+</p>
+
+## Features
+
+- Minimal, production-ready table examples (basic, sorting, filtering)
+- Copy-to-clipboard for JSX code blocks
+- Responsive and dark‑mode friendly patterns
+- Utility-first styling with Tailwind CSS v4
+- TypeScript, React 19, and Next.js App Router
+
+## Tech Stack
+
+- Next.js 15 (App Router) + React 19 + TypeScript
+- Tailwind CSS 4
+- Radix UI primitives (Tabs)
+- `lucide-react` icons
+- Lightweight UI primitives in `src/components/ui/*`
 
 ## Getting Started
 
-First, run the development server:
+Prerequisites: Node.js 18+.
 
 ```bash
+# Install dependencies
+npm install
+
+# Start dev server
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+
+# Build and run production
+npm run build && npm start
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open `http://localhost:3000` in your browser.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## How to Use
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+There are two easy ways to use the table examples:
 
-## Learn More
+1. Copy from the Gallery (recommended)
 
-To learn more about Next.js, take a look at the following resources:
+- Go to the app, navigate the tabs (Basic / Sorting / Filtering).
+- Click "Show Code" then "Copy" to copy the JSX.
+- Paste into your project. Adjust data and classes as needed.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+2. Import components directly
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+- Each example lives in `src/components/tables/`.
+- Import and render in your page/component:
 
-## Deploy on Vercel
+```tsx
+import BasicBorderedTable from "@/components/tables/BasicBorderedTable";
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+export default function Page() {
+  return (
+    <div className="p-6">
+      <BasicBorderedTable />
+    </div>
+  );
+}
+```
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+If you add a new table, add the component under `src/components/tables/` and register it in `src/data/tableExamples.tsx` (set `id`, `title`, `description`, `group`, `preview`, and `code`). It will automatically appear in the gallery.
+
+## Contribution
+
+Contributions are welcome! To add improvements or new table examples:
+
+1. Fork the repo and create a feature branch.
+2. Run locally with `npm run dev`.
+3. Add your component under `src/components/tables/`.
+4. Add an entry to `src/data/tableExamples.tsx` with its metadata and code.
+5. Include or update screenshots under `public/screenshots/` and reference them above.
+6. Open a PR with a clear description and before/after screenshots.
+
+## License
+
+MIT. See `LICENSE` for details.

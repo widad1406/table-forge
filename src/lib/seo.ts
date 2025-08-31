@@ -13,7 +13,7 @@ export type SiteConfig = {
 export const siteConfig: SiteConfig = {
   name: "TableForge - Beautiful, reusable table components built with Tailwind CSS and modern UI.",
   description:
-    "Beautiful, reusable table components built with Tailwind CSS and modern UI. Browse, copy, and customize for your projects.",
+    "Beautiful, reusable table components built with Tailwind CSS and modern UI. Browse, copy, and customize for your projects. 100% Open Source and Free to use.",
   siteUrl: process.env.NEXT_PUBLIC_SITE_URL || "http://localhost:3000",
   keywords: [
     "tables",

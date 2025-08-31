@@ -14,6 +14,7 @@ export default function Home() {
           <p className="text-muted-foreground max-w-2xl mx-auto">
             Explore a curated collection of table designs built with Tailwind
             CSS and modern UI. Copy, customize, and use them in your projects.
+            100% Open Source and Free to use.
           </p>
           <div className="flex items-center justify-center gap-3">
             <Button asChild size="lg">
@@ -39,7 +40,10 @@ export default function Home() {
         </div>
       </section>
 
-      <main id="gallery" className="mx-auto max-w-5xl py-20 scroll-mt-20 px-4">
+      <main
+        id="gallery"
+        className="mx-auto max-w-[60rem] py-20 scroll-mt-20 px-4"
+      >
         <h2 className="text-2xl sm:text-3xl font-bold tracking-tight pb-1">
           Tables Gallery
         </h2>
