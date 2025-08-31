@@ -18,11 +18,11 @@ Ready-to-use, accessible table components built with Next.js and Tailwind CSS. B
 
 ## Features
 
-- Minimal, production-ready table examples (basic, sorting, filtering)
-- Copy-to-clipboard for JSX code blocks
-- Responsive and dark‑mode friendly patterns
-- Utility-first styling with Tailwind CSS v4
-- TypeScript, React 19, and Next.js App Router
+- Minimal, production-ready examples — includes basic, sorting, and filtering tables
+- One-click copy — grab JSX snippets instantly with copy-to-clipboard
+- Responsive & dark-mode ready — tables adapt seamlessly to different themes and screens
+- Utility-first styling — built entirely with Tailwind CSS v4
+- Zero dependencies — just pure React + Tailwind, nothing extra
 
 ## Tech Stack
 
