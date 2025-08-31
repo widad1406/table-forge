@@ -33,7 +33,7 @@ export const metadata: Metadata = {
     siteName: siteConfig.name,
     images: [
       {
-        url: absoluteUrl("/og"),
+        url: absoluteUrl("/og_image.png"),
         width: 1200,
         height: 630,
         alt: siteConfig.name,
@@ -47,7 +47,7 @@ export const metadata: Metadata = {
     title: siteConfig.name,
     description: siteConfig.description,
     creator: siteConfig.social.twitter,
-    images: [absoluteUrl("/og")],
+    images: [absoluteUrl("/og_image.png")],
   },
   authors: {
     name: "Anmoldeep Singh",
