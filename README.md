@@ -11,8 +11,8 @@ Ready-to-use, accessible table components built with Next.js and Tailwind CSS. B
 
 <!-- Add more screenshots in a simple grid -->
 <p align="center">
-  <img src="public/screenshots/01.png" alt="Screenshot 1" width="450" />
-  <img src="public/screenshots/02.png" alt="Screenshot 2" width="450" />
+  <img src="public/screenshots/01.png" alt="Screenshot 1" width="900" />
+  <img src="public/screenshots/02.png" alt="Screenshot 2" width="900" />
 </p>
 
 ## Features
