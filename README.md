@@ -1,6 +1,6 @@
 # TableForge — Copy‑paste Tailwind Table Examples
 
-Ready-to-use, accessible table components built with Next.js and Tailwind CSS. Browse examples, preview variations, and copy the JSX in one click.
+Ready-to-use, accessible table components built with Tailwind CSS and Modern UI. Browse examples, preview variations, copy the code in one click and use them in your projects. 100% Open Source and Free to use.
 
 <!-- Screenshots -->
 <p align="center">
