@@ -11,8 +11,8 @@ export default function Navbar() {
           <Table className="size-5" aria-hidden="true" />
           <span className="text-lg leading-none font-bold">TableForge</span>
         </Link>
-        <div className="flex items-center gap-2">
-          <Button asChild variant="secondary">
+        <div className="flex items-center gap-1.5 sm:gap-2">
+          <Button asChild variant="secondary" className="hidden sm:inline-flex">
             <Link
               href="https://buymeacoffee.com/sainianmol0"
               target="_blank"
@@ -20,6 +20,21 @@ export default function Navbar() {
               aria-label="Buy me a coffee"
             >
               Buy me a coffee{" "}
+              <Heart className="size-4 text-red-600 fill-red-600" />
+            </Link>
+          </Button>
+          <Button
+            asChild
+            variant="secondary"
+            size="icon"
+            className="inline-flex sm:hidden"
+          >
+            <Link
+              href="https://buymeacoffee.com/sainianmol0"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Buy me a coffee"
+            >
               <Heart className="size-4 text-red-600 fill-red-600" />
             </Link>
           </Button>

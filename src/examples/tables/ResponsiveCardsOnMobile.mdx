@@ -1,0 +1,22 @@
+import ExampleCard from "@/components/ExampleCard";
+import ResponsiveCardsOnMobile from "@/components/tables/ResponsiveCardsOnMobile";
+
+export const meta = {
+  id: "cards-on-mobile",
+  title: "Responsive (Cards on Mobile)",
+  description: "Stacks into cards on small screens using utility classes only.",
+  group: "Basic",
+  codePath: "src/components/tables/ResponsiveCardsOnMobile.tsx",
+};
+
+export default function Example() {
+  return (
+    <ExampleCard
+      title={meta.title}
+      description={meta.description}
+      codePath={meta.codePath}
+    >
+      <ResponsiveCardsOnMobile />
+    </ExampleCard>
+  );
+}

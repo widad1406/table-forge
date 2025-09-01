@@ -1,0 +1,22 @@
+import ExampleCard from "@/components/ExampleCard";
+import TopControlsSortableTable from "@/components/tables/TopControlsSortableTable";
+
+export const meta = {
+  id: "sorting-top-controls",
+  title: "Sorting Controls on Top",
+  description: "Buttons above the table to choose column and direction.",
+  group: "Sorting",
+  codePath: "src/components/tables/TopControlsSortableTable.tsx",
+};
+
+export default function Example() {
+  return (
+    <ExampleCard
+      title={meta.title}
+      description={meta.description}
+      codePath={meta.codePath}
+    >
+      <TopControlsSortableTable />
+    </ExampleCard>
+  );
+}

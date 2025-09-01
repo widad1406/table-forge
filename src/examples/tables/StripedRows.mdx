@@ -1,0 +1,22 @@
+import ExampleCard from "@/components/ExampleCard";
+import StripedRowsTable from "@/components/tables/StripedRowsTable";
+
+export const meta = {
+  id: "striped-rows",
+  title: "Striped Rows",
+  description: "Alternating row colors for readability.",
+  group: "Basic",
+  codePath: "src/components/tables/StripedRowsTable.tsx",
+};
+
+export default function Example() {
+  return (
+    <ExampleCard
+      title={meta.title}
+      description={meta.description}
+      codePath={meta.codePath}
+    >
+      <StripedRowsTable />
+    </ExampleCard>
+  );
+}

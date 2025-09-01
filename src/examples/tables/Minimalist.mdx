@@ -1,0 +1,22 @@
+import ExampleCard from "@/components/ExampleCard";
+import MinimalistUI from "@/components/tables/MinimalistUI";
+
+export const meta = {
+  id: "basic-minimalist",
+  title: "Minimalist",
+  description: "Simple table using Minimalist theme.",
+  group: "Basic",
+  codePath: "src/components/tables/MinimalistUI.tsx",
+};
+
+export default function Example() {
+  return (
+    <ExampleCard
+      title={meta.title}
+      description={meta.description}
+      codePath={meta.codePath}
+    >
+      <MinimalistUI />
+    </ExampleCard>
+  );
+}

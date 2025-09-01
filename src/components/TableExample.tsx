@@ -1,11 +1,11 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useCallback } from "react";
 import { Check, Copy } from "lucide-react";
 import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
 import {
-  oneDark,
-  oneLight,
+  vscDarkPlus,
+  duotoneLight,
 } from "react-syntax-highlighter/dist/esm/styles/prism";
 import { Button } from "@/components/ui/button";
 import {
@@ -34,7 +34,7 @@ export default function TableExample({
   const [tab, setTab] = useState<"preview" | "code">("preview");
   const { theme } = useTheme();
 
-  async function handleCopy() {
+  const handleCopy = useCallback(async () => {
     try {
       await navigator.clipboard.writeText(code.trim());
       setCopied(true);
@@ -42,20 +42,19 @@ export default function TableExample({
     } catch {
       setCopied(false);
     }
-  }
+  }, [code]);
 
   const CodeBlock = (
     <SyntaxHighlighter
       language="tsx"
-      style={theme === "dark" ? oneDark : oneLight}
+      style={theme === "dark" ? vscDarkPlus : duotoneLight}
       customStyle={{
         margin: 0,
-        borderRadius: 8,
+        borderRadius: "var(--radius)",
         padding: "0.75rem",
         maxHeight: "500px",
+        border: "1px solid var(--border)",
       }}
-      wrapLongLines
-      wrapLines
       showLineNumbers
     >
       {code.trim()}
@@ -70,17 +69,13 @@ export default function TableExample({
 
   return (
     <Card>
-      <CardHeader className="flex flex-row items-center justify-between gap-3">
-        <div>
-          <CardTitle className="text-base leading-6">{title}</CardTitle>
-          {description ? (
-            <CardDescription className="mt-1">{description}</CardDescription>
-          ) : null}
-        </div>
+      <CardHeader>
+        <CardTitle className="text-base">{title}</CardTitle>
+        <CardDescription>{description}</CardDescription>
       </CardHeader>
 
       <CardContent>
-        <div className="flex w-full justify-between">
+        <div className="flex w-full justify-between items-center">
           <Button
             type="button"
             variant="outline"
@@ -94,7 +89,7 @@ export default function TableExample({
             onClick={handleCopy}
             aria-label="Copy JSX"
             variant="outline"
-            size="sm"
+            size="icon"
           >
             {copied ? (
               <Check className="text-emerald-500" />

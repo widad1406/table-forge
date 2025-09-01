@@ -1,0 +1,22 @@
+import ExampleCard from "@/components/ExampleCard";
+import CompactTable from "@/components/tables/CompactTable";
+
+export const meta = {
+  id: "compact",
+  title: "Compact",
+  description: "Dense spacing for data-heavy tables.",
+  group: "Basic",
+  codePath: "src/components/tables/CompactTable.tsx",
+};
+
+export default function Example() {
+  return (
+    <ExampleCard
+      title={meta.title}
+      description={meta.description}
+      codePath={meta.codePath}
+    >
+      <CompactTable />
+    </ExampleCard>
+  );
+}

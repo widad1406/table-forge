@@ -1,0 +1,22 @@
+import ExampleCard from "@/components/ExampleCard";
+import WithActionsTable from "@/components/tables/WithActionsTable";
+
+export const meta = {
+  id: "with-actions",
+  title: "With Row Actions",
+  description: "Action buttons in a trailing column.",
+  group: "Basic",
+  codePath: "src/components/tables/WithActionsTable.tsx",
+};
+
+export default function Example() {
+  return (
+    <ExampleCard
+      title={meta.title}
+      description={meta.description}
+      codePath={meta.codePath}
+    >
+      <WithActionsTable />
+    </ExampleCard>
+  );
+}

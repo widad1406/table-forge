@@ -1,0 +1,22 @@
+import ExampleCard from "@/components/ExampleCard";
+import FilterableTable from "@/components/tables/FilterableTable";
+
+export const meta = {
+  id: "filtering-basic",
+  title: "Filterable (Search input)",
+  description: "Client-side text search across multiple fields.",
+  group: "Filtering",
+  codePath: "src/components/tables/FilterableTable.tsx",
+};
+
+export default function Example() {
+  return (
+    <ExampleCard
+      title={meta.title}
+      description={meta.description}
+      codePath={meta.codePath}
+    >
+      <FilterableTable />
+    </ExampleCard>
+  );
+}

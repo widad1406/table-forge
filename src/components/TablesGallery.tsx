@@ -1,26 +1,11 @@
-"use client";
-
-import { useMemo, useState } from "react";
-import TableExample from "@/components/TableExample";
-import { tableExamples } from "@/data/tableExamples";
+import { examples } from "@/examples";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 
 export default function TablesGallery() {
-  const groups = useMemo(() => {
-    const unique = Array.from(new Set(tableExamples.map((t) => t.group)));
-    return unique;
-  }, []);
-
-  const [active, setActive] = useState(groups[0] ?? "");
+  const groups = Array.from(new Set(examples.map((t) => t.group)));
 
   return (
-    <Tabs
-      value={active}
-      onValueChange={(value) =>
-        setActive(value as "Basic" | "Sorting" | "Filtering")
-      }
-      className="space-y-4"
-    >
+    <Tabs defaultValue={groups[0]} className="space-y-4">
       <TabsList className="w-full">
         {groups.map((g) => (
           <TabsTrigger key={g} value={g}>
@@ -32,20 +17,15 @@ export default function TablesGallery() {
       {groups.map((g) => (
         <TabsContent key={g} value={g} className="m-0">
           <p className="text-sm text-muted-foreground pb-4">
-            {tableExamples.filter((t) => t.group === g).length} examples
+            {examples.filter((t) => t.group === g).length} examples
           </p>
           <div className="grid grid-cols-1 gap-6">
-            {tableExamples
+            {examples
               .filter((t) => t.group === g)
-              .map((ex) => (
-                <TableExample
-                  key={ex.id}
-                  title={ex.title}
-                  description={ex.description}
-                  preview={ex.preview}
-                  code={ex.code}
-                />
-              ))}
+              .map((ex) => {
+                const Component = ex.Component;
+                return <Component key={ex.id} />;
+              })}
           </div>
         </TabsContent>
       ))}

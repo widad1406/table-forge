@@ -1,0 +1,22 @@
+import ExampleCard from "@/components/ExampleCard";
+import BasicBorderedTable from "@/components/tables/BasicBorderedTable";
+
+export const meta = {
+  id: "basic-bordered",
+  title: "Basic Bordered",
+  description: "Simple table with borders and striped header.",
+  group: "Basic",
+  codePath: "src/components/tables/BasicBorderedTable.tsx",
+};
+
+export default function Example() {
+  return (
+    <ExampleCard
+      title={meta.title}
+      description={meta.description}
+      codePath={meta.codePath}
+    >
+      <BasicBorderedTable />
+    </ExampleCard>
+  );
+}

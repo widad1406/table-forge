@@ -58,6 +58,8 @@ export const siteConfig: SiteConfig = {
     "row selection",
     "bulk actions",
     "dark mode table",
+    "react table",
+    "open source components",
   ].join(", "),
   social: {
     twitter: "@sainianmol16",
@@ -78,6 +80,7 @@ export const siteConfig: SiteConfig = {
     "Dashboard",
     "Data Grid",
     "Templates",
+    "Open Source",
   ].join(", "),
 };
 
