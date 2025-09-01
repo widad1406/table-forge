@@ -1,6 +1,6 @@
 export default function MinimalistUI() {
   return (
-    <div className="rounded-lg border">
+    <div className="rounded-lg border overflow-hidden">
       <table className="w-full caption-bottom text-sm">
         <thead className="[&_tr]:border-b">
           <tr className="border-b">

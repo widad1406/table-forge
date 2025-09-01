@@ -3,16 +3,16 @@ export default function CompactTable() {
     <table className="min-w-full border-separate border-spacing-0 text-left text-xs">
       <thead>
         <tr>
-          <th className="sticky top-0 bg-white px-3 py-2 font-semibold text-gray-700">
+          <th className="sticky top-0  px-3 py-2 font-semibold text-foreground">
             ID
           </th>
-          <th className="sticky top-0 bg-white px-3 py-2 font-semibold text-gray-700">
+          <th className="sticky top-0 px-3 py-2 font-semibold text-foreground">
             Metric
           </th>
-          <th className="sticky top-0 bg-white px-3 py-2 font-semibold text-gray-700">
+          <th className="sticky top-0 px-3 py-2 font-semibold text-foreground">
             Value
           </th>
-          <th className="sticky top-0 bg-white px-3 py-2 font-semibold text-gray-700">
+          <th className="sticky top-0 px-3 py-2 font-semibold text-foreground">
             Delta
           </th>
         </tr>
@@ -24,7 +24,7 @@ export default function CompactTable() {
           <td className="px-3 py-1.5">12,450</td>
           <td className="px-3 py-1.5 text-green-600">+8%</td>
         </tr>
-        <tr className="bg-gray-50">
+        <tr className="bg-muted">
           <td className="px-3 py-1.5">A-02</td>
           <td className="px-3 py-1.5">Signups</td>
           <td className="px-3 py-1.5">1,248</td>

@@ -1,7 +1,7 @@
 export default function BasicBorderedTable() {
   return (
-    <table className="min-w-full border border-gray-200 text-left text-sm text-gray-700">
-      <thead className="bg-gray-50 text-gray-600">
+    <table className="min-w-full border text-left text-sm">
+      <thead className="bg-muted text-muted-foreground">
         <tr>
           <th className="px-4 py-2 font-medium">Name</th>
           <th className="px-4 py-2 font-medium">Title</th>
@@ -16,7 +16,7 @@ export default function BasicBorderedTable() {
           <td className="px-4 py-2">lindsay.walton@example.com</td>
           <td className="px-4 py-2">Member</td>
         </tr>
-        <tr className="border-t bg-gray-50/50">
+        <tr className="border-t">
           <td className="px-4 py-2">Courtney Henry</td>
           <td className="px-4 py-2">Designer</td>
           <td className="px-4 py-2">courtney.henry@example.com</td>

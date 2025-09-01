@@ -67,24 +67,27 @@ export default function SortableTable() {
   function renderSortIcon(key: SortKey) {
     if (key !== sortKey)
       return (
-        <span aria-hidden className="ml-1 select-none text-gray-400"></span>
+        <span
+          aria-hidden
+          className="ml-1 select-none text-muted-foreground"
+        ></span>
       );
     return (
-      <span aria-hidden className="ml-1 select-none text-gray-600">
+      <span aria-hidden className="ml-1 select-none text-foreground">
         {sortDirection === "asc" ? "↑" : "↓"}
       </span>
     );
   }
 
   return (
-    <table className="min-w-full divide-y divide-gray-200 text-left text-sm">
-      <thead className="bg-gray-50 text-gray-700">
+    <table className="min-w-full divide-y divide-border text-left text-sm">
+      <thead className="bg-muted text-muted-foreground">
         <tr>
           <th className="px-4 py-2 font-semibold">
             <button
               type="button"
               onClick={() => onHeaderClick("name")}
-              className="inline-flex items-center hover:underline"
+              className="inline-flex items-center group"
               aria-sort={
                 sortKey === "name"
                   ? sortDirection === "asc"
@@ -93,14 +96,15 @@ export default function SortableTable() {
                   : "none"
               }
             >
-              Name {renderSortIcon("name")}
+              <span className="group-hover:underline">Name</span>{" "}
+              {renderSortIcon("name")}
             </button>
           </th>
           <th className="px-4 py-2 font-semibold">
             <button
               type="button"
               onClick={() => onHeaderClick("title")}
-              className="inline-flex items-center hover:underline"
+              className="inline-flex items-center group"
               aria-sort={
                 sortKey === "title"
                   ? sortDirection === "asc"
@@ -109,14 +113,15 @@ export default function SortableTable() {
                   : "none"
               }
             >
-              Title {renderSortIcon("title")}
+              <span className="group-hover:underline">Title</span>{" "}
+              {renderSortIcon("title")}
             </button>
           </th>
           <th className="px-4 py-2 font-semibold">
             <button
               type="button"
               onClick={() => onHeaderClick("email")}
-              className="inline-flex items-center hover:underline"
+              className="inline-flex items-center group"
               aria-sort={
                 sortKey === "email"
                   ? sortDirection === "asc"
@@ -125,14 +130,15 @@ export default function SortableTable() {
                   : "none"
               }
             >
-              Email {renderSortIcon("email")}
+              <span className="group-hover:underline">Email</span>{" "}
+              {renderSortIcon("email")}
             </button>
           </th>
           <th className="px-4 py-2 font-semibold">
             <button
               type="button"
               onClick={() => onHeaderClick("role")}
-              className="inline-flex items-center hover:underline"
+              className="inline-flex items-center group"
               aria-sort={
                 sortKey === "role"
                   ? sortDirection === "asc"
@@ -141,12 +147,13 @@ export default function SortableTable() {
                   : "none"
               }
             >
-              Role {renderSortIcon("role")}
+              <span className="group-hover:underline"> Role</span>{" "}
+              {renderSortIcon("role")}
             </button>
           </th>
         </tr>
       </thead>
-      <tbody className="divide-y divide-gray-200">
+      <tbody className="divide-y divide-border">
         {sorted.map((p) => (
           <tr key={p.email}>
             <td className="px-4 py-2">{p.name}</td>

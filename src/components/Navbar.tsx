@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
+import ThemeToggle from "@/components/ThemeToggle";
 import { Heart, Table } from "lucide-react";
 
 export default function Navbar() {
@@ -22,6 +23,7 @@ export default function Navbar() {
               <Heart className="size-4 text-red-600 fill-red-600" />
             </Link>
           </Button>
+          <ThemeToggle />
         </div>
       </div>
     </header>

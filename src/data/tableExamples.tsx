@@ -4,7 +4,6 @@ import StripedRowsTable from "@/components/tables/StripedRowsTable";
 import CompactTable from "@/components/tables/CompactTable";
 import ResponsiveCardsOnMobile from "@/components/tables/ResponsiveCardsOnMobile";
 import WithActionsTable from "@/components/tables/WithActionsTable";
-import BasicDarkTable from "@/components/tables/BasicDarkTable";
 import SortableTable from "@/components/tables/SortableTable";
 import TopControlsSortableTable from "@/components/tables/TopControlsSortableTable";
 import FilterableTable from "@/components/tables/FilterableTable";
@@ -22,13 +21,52 @@ export type TableSnippet = {
 export const tableExamples: TableSnippet[] = [
   {
     id: "basic-shadcn",
-    title: "Minimalist UI",
-    description: "Simple table using Minimalist UI styles.",
+    title: "Minimalist",
+    description: "Simple table using Minimalist theme.",
     preview: <MinimalistUI />,
     group: "Basic",
     code: `export default function MinimalistUI() {
   return (
-    <div className=\"rounded-lg border\">\n      <table className=\"w-full caption-bottom text-sm\">\n        <thead className=\"[&_tr]:border-b\">\n          <tr className=\"border-b\">\n            <th className=\"text-muted-foreground h-10 px-4 text-left align-middle font-medium\">Name</th>\n            <th className=\"text-muted-foreground h-10 px-4 text-left align-middle font-medium\">Title</th>\n            <th className=\"text-muted-foreground h-10 px-4 text-left align-middle font-medium\">Email</th>\n            <th className=\"text-muted-foreground h-10 px-4 text-left align-middle font-medium\">Role</th>\n          </tr>\n        </thead>\n        <tbody className=\"[&_tr:last-child]:border-0\">\n          <tr className=\"hover:bg-muted/50 border-b transition-colors\">\n            <td className=\"p-4 align-middle\">Lindsay Walton</td>\n            <td className=\"p-4 align-middle\">Front-end Developer</td>\n            <td className=\"p-4 align-middle\">lindsay.walton@example.com</td>\n            <td className=\"p-4 align-middle\">Member</td>\n          </tr>\n          <tr className=\"hover:bg-muted/50 border-b transition-colors\">\n            <td className=\"p-4 align-middle\">Courtney Henry</td>\n            <td className=\"p-4 align-middle\">Designer</td>\n            <td className=\"p-4 align-middle\">courtney.henry@example.com</td>\n            <td className=\"p-4 align-middle\">Admin</td>\n          </tr>\n          <tr className=\"hover:bg-muted/50 border-b transition-colors\">\n            <td className=\"p-4 align-middle\">Tom Cook</td>\n            <td className=\"p-4 align-middle\">Director of Product</td>\n            <td className=\"p-4 align-middle\">tom.cook@example.com</td>\n            <td className=\"p-4 align-middle\">Owner</td>\n          </tr>\n        </tbody>\n      </table>\n    </div>
+    <div className="rounded-lg border overflow-hidden">
+      <table className="w-full caption-bottom text-sm">
+        <thead className="[&_tr]:border-b">
+          <tr className="border-b">
+            <th className="text-muted-foreground h-10 px-4 text-left align-middle font-medium">
+              Name
+            </th>
+            <th className="text-muted-foreground h-10 px-4 text-left align-middle font-medium">
+              Title
+            </th>
+            <th className="text-muted-foreground h-10 px-4 text-left align-middle font-medium">
+              Email
+            </th>
+            <th className="text-muted-foreground h-10 px-4 text-left align-middle font-medium">
+              Role
+            </th>
+          </tr>
+        </thead>
+        <tbody className="[&_tr:last-child]:border-0">
+          <tr className="hover:bg-muted/50 border-b transition-colors">
+            <td className="p-4 align-middle">Lindsay Walton</td>
+            <td className="p-4 align-middle">Front-end Developer</td>
+            <td className="p-4 align-middle">lindsay.walton@example.com</td>
+            <td className="p-4 align-middle">Member</td>
+          </tr>
+          <tr className="hover:bg-muted/50 border-b transition-colors">
+            <td className="p-4 align-middle">Courtney Henry</td>
+            <td className="p-4 align-middle">Designer</td>
+            <td className="p-4 align-middle">courtney.henry@example.com</td>
+            <td className="p-4 align-middle">Admin</td>
+          </tr>
+          <tr className="hover:bg-muted/50 border-b transition-colors">
+            <td className="p-4 align-middle">Tom Cook</td>
+            <td className="p-4 align-middle">Director of Product</td>
+            <td className="p-4 align-middle">tom.cook@example.com</td>
+            <td className="p-4 align-middle">Owner</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
   );
 }
 `.trim(),
@@ -39,11 +77,10 @@ export const tableExamples: TableSnippet[] = [
     description: "Simple table with borders and striped header.",
     preview: <BasicBorderedTable />,
     group: "Basic",
-    code: `
-export default function BasicBorderedTable() {
+    code: `export default function BasicBorderedTable() {
   return (
-    <table className="min-w-full border border-gray-200 text-left text-sm text-gray-700">
-      <thead className="bg-gray-50 text-gray-600">
+    <table className="min-w-full border text-left text-sm">
+      <thead className="bg-muted text-muted-foreground">
         <tr>
           <th className="px-4 py-2 font-medium">Name</th>
           <th className="px-4 py-2 font-medium">Title</th>
@@ -58,7 +95,7 @@ export default function BasicBorderedTable() {
           <td className="px-4 py-2">lindsay.walton@example.com</td>
           <td className="px-4 py-2">Member</td>
         </tr>
-        <tr className="border-t bg-gray-50/50">
+        <tr className="border-t">
           <td className="px-4 py-2">Courtney Henry</td>
           <td className="px-4 py-2">Designer</td>
           <td className="px-4 py-2">courtney.henry@example.com</td>
@@ -74,7 +111,7 @@ export default function BasicBorderedTable() {
     </table>
   );
 }
-    `.trim(),
+`.trim(),
   },
 
   {
@@ -83,8 +120,7 @@ export default function BasicBorderedTable() {
     description: "Click headers to sort ascending/descending.",
     preview: <SortableTable />,
     group: "Sorting",
-    code: `
-"use client";
+    code: `"use client";
 
 import { useMemo, useState } from "react";
 
@@ -99,10 +135,30 @@ type SortKey = keyof Person;
 type SortDirection = "asc" | "desc";
 
 const initialData: Person[] = [
-  { name: "Lindsay Walton", title: "Front-end Developer", email: "lindsay.walton@example.com", role: "Member" },
-  { name: "Courtney Henry", title: "Designer", email: "courtney.henry@example.com", role: "Admin" },
-  { name: "Tom Cook", title: "Director of Product", email: "tom.cook@example.com", role: "Owner" },
-  { name: "Jacob Jones", title: "Engineering Manager", email: "jacob.jones@example.com", role: "Member" },
+  {
+    name: "Lindsay Walton",
+    title: "Front-end Developer",
+    email: "lindsay.walton@example.com",
+    role: "Member",
+  },
+  {
+    name: "Courtney Henry",
+    title: "Designer",
+    email: "courtney.henry@example.com",
+    role: "Admin",
+  },
+  {
+    name: "Tom Cook",
+    title: "Director of Product",
+    email: "tom.cook@example.com",
+    role: "Owner",
+  },
+  {
+    name: "Jacob Jones",
+    title: "Engineering Manager",
+    email: "jacob.jones@example.com",
+    role: "Member",
+  },
 ];
 
 export default function SortableTable() {
@@ -131,61 +187,95 @@ export default function SortableTable() {
   }, [sortKey, sortDirection]);
 
   function renderSortIcon(key: SortKey) {
-    if (key !== sortKey) return (
-      <span aria-hidden className="ml-1 select-none text-gray-400">↕</span>
-    );
+    if (key !== sortKey)
+      return (
+        <span
+          aria-hidden
+          className="ml-1 select-none text-muted-foreground"
+        ></span>
+      );
     return (
-      <span aria-hidden className="ml-1 select-none text-gray-600">{sortDirection === "asc" ? "▲" : "▼"}</span>
+      <span aria-hidden className="ml-1 select-none text-foreground">
+        {sortDirection === "asc" ? "↑" : "↓"}
+      </span>
     );
   }
 
   return (
-    <table className="min-w-full divide-y divide-gray-200 text-left text-sm">
-      <thead className="bg-gray-50 text-gray-700">
+    <table className="min-w-full divide-y divide-border text-left text-sm">
+      <thead className="bg-muted text-muted-foreground">
         <tr>
           <th className="px-4 py-2 font-semibold">
             <button
               type="button"
               onClick={() => onHeaderClick("name")}
-              className="inline-flex items-center hover:underline"
-              aria-sort={sortKey === "name" ? (sortDirection === "asc" ? "ascending" : "descending") : "none"}
+              className="inline-flex items-center group"
+              aria-sort={
+                sortKey === "name"
+                  ? sortDirection === "asc"
+                    ? "ascending"
+                    : "descending"
+                  : "none"
+              }
             >
-              Name {renderSortIcon("name")}
+              <span className="group-hover:underline">Name</span>{" "}
+              {renderSortIcon("name")}
             </button>
           </th>
           <th className="px-4 py-2 font-semibold">
             <button
               type="button"
               onClick={() => onHeaderClick("title")}
-              className="inline-flex items-center hover:underline"
-              aria-sort={sortKey === "title" ? (sortDirection === "asc" ? "ascending" : "descending") : "none"}
+              className="inline-flex items-center group"
+              aria-sort={
+                sortKey === "title"
+                  ? sortDirection === "asc"
+                    ? "ascending"
+                    : "descending"
+                  : "none"
+              }
             >
-              Title {renderSortIcon("title")}
+              <span className="group-hover:underline">Title</span>{" "}
+              {renderSortIcon("title")}
             </button>
           </th>
           <th className="px-4 py-2 font-semibold">
             <button
               type="button"
               onClick={() => onHeaderClick("email")}
-              className="inline-flex items-center hover:underline"
-              aria-sort={sortKey === "email" ? (sortDirection === "asc" ? "ascending" : "descending") : "none"}
+              className="inline-flex items-center group"
+              aria-sort={
+                sortKey === "email"
+                  ? sortDirection === "asc"
+                    ? "ascending"
+                    : "descending"
+                  : "none"
+              }
             >
-              Email {renderSortIcon("email")}
+              <span className="group-hover:underline">Email</span>{" "}
+              {renderSortIcon("email")}
             </button>
           </th>
           <th className="px-4 py-2 font-semibold">
             <button
               type="button"
               onClick={() => onHeaderClick("role")}
-              className="inline-flex items-center hover:underline"
-              aria-sort={sortKey === "role" ? (sortDirection === "asc" ? "ascending" : "descending") : "none"}
+              className="inline-flex items-center group"
+              aria-sort={
+                sortKey === "role"
+                  ? sortDirection === "asc"
+                    ? "ascending"
+                    : "descending"
+                  : "none"
+              }
             >
-              Role {renderSortIcon("role")}
+              <span className="group-hover:underline"> Role</span>{" "}
+              {renderSortIcon("role")}
             </button>
           </th>
         </tr>
       </thead>
-      <tbody className="divide-y divide-gray-200">
+      <tbody className="divide-y divide-border">
         {sorted.map((p) => (
           <tr key={p.email}>
             <td className="px-4 py-2">{p.name}</td>
@@ -198,7 +288,7 @@ export default function SortableTable() {
     </table>
   );
 }
-    `.trim(),
+`.trim(),
   },
   {
     id: "sorting-top-controls",
@@ -206,8 +296,7 @@ export default function SortableTable() {
     description: "Buttons above the table to choose column and direction.",
     preview: <TopControlsSortableTable />,
     group: "Sorting",
-    code: `
-"use client";
+    code: `"use client";
 
 import { useMemo, useState } from "react";
 
@@ -222,10 +311,30 @@ type SortKey = keyof Person;
 type SortDirection = "asc" | "desc";
 
 const initialData: Person[] = [
-  { name: "Lindsay Walton", title: "Front-end Developer", email: "lindsay.walton@example.com", role: "Member" },
-  { name: "Courtney Henry", title: "Designer", email: "courtney.henry@example.com", role: "Admin" },
-  { name: "Tom Cook", title: "Director of Product", email: "tom.cook@example.com", role: "Owner" },
-  { name: "Jacob Jones", title: "Engineering Manager", email: "jacob.jones@example.com", role: "Member" },
+  {
+    name: "Lindsay Walton",
+    title: "Front-end Developer",
+    email: "lindsay.walton@example.com",
+    role: "Member",
+  },
+  {
+    name: "Courtney Henry",
+    title: "Designer",
+    email: "courtney.henry@example.com",
+    role: "Admin",
+  },
+  {
+    name: "Tom Cook",
+    title: "Director of Product",
+    email: "tom.cook@example.com",
+    role: "Owner",
+  },
+  {
+    name: "Jacob Jones",
+    title: "Engineering Manager",
+    email: "jacob.jones@example.com",
+    role: "Member",
+  },
 ];
 
 export default function TopControlsSortableTable() {
@@ -244,7 +353,13 @@ export default function TopControlsSortableTable() {
     return data;
   }, [sortKey, sortDirection]);
 
-  function HeaderButton({ label, keyName }: { label: string; keyName: SortKey }) {
+  function HeaderButton({
+    label,
+    keyName,
+  }: {
+    label: string;
+    keyName: SortKey;
+  }) {
     const isActive = sortKey === keyName;
     return (
       <button
@@ -253,8 +368,8 @@ export default function TopControlsSortableTable() {
         className={
           "rounded-md border px-2 py-1 text-xs transition-colors " +
           (isActive
-            ? "border-gray-300 bg-gray-100 text-gray-900"
-            : "border-transparent bg-white text-gray-700 hover:bg-gray-50")
+            ? "border-input bg-input/40 text-foreground"
+            : "border-transparent bg-background text-muted-foreground hover:bg-muted")
         }
         aria-pressed={isActive}
       >
@@ -266,23 +381,29 @@ export default function TopControlsSortableTable() {
   return (
     <div className="w-full">
       <div className="mb-2 flex flex-wrap items-center gap-2">
-        <span className="text-xs font-medium text-gray-600">Sort by:</span>
+        <span className="text-xs font-medium text-muted-foreground">
+          Sort by:
+        </span>
         <HeaderButton label="Name" keyName="name" />
         <HeaderButton label="Title" keyName="title" />
         <HeaderButton label="Email" keyName="email" />
         <HeaderButton label="Role" keyName="role" />
-        <div className="ml-2 h-4 w-px bg-gray-200" />
+        <div className="ml-2 h-4 w-px bg-border" />
         <button
           type="button"
-          onClick={() => setSortDirection((d) => (d === "asc" ? "desc" : "asc"))}
-          className="rounded-md border border-gray-300 px-2 py-1 text-xs text-gray-800 hover:bg-gray-50"
+          onClick={() =>
+            setSortDirection((d) => (d === "asc" ? "desc" : "asc"))
+          }
+          className="rounded-md border px-2 py-1 text-xs text-foreground hover:bg-muted"
+          aria-label="Toggle sort direction"
+          aria-live="polite"
         >
-          {sortDirection === "asc" ? "Ascending ▲" : "Descending ▼"}
+          {sortDirection === "asc" ? "Ascending ↑" : "Descending ↓"}
         </button>
       </div>
 
-      <table className="min-w-full divide-y divide-gray-200 text-left text-sm">
-        <thead className="bg-gray-50 text-gray-700">
+      <table className="min-w-full divide-y divide-border text-left text-sm">
+        <thead className="bg-muted text-muted-foreground">
           <tr>
             <th className="px-4 py-2 font-semibold">Name</th>
             <th className="px-4 py-2 font-semibold">Title</th>
@@ -290,7 +411,7 @@ export default function TopControlsSortableTable() {
             <th className="px-4 py-2 font-semibold">Role</th>
           </tr>
         </thead>
-        <tbody className="divide-y divide-gray-200">
+        <tbody className="divide-y divide-border">
           {sorted.map((p) => (
             <tr key={p.email}>
               <td className="px-4 py-2">{p.name}</td>
@@ -304,87 +425,60 @@ export default function TopControlsSortableTable() {
     </div>
   );
 }
-    `.trim(),
+`.trim(),
   },
-  {
-    id: "basic-dark",
-    title: "Basic Dark-ready",
-    description: "Works in light and dark (no JS).",
-    preview: (
-      <div className="dark rounded-md bg-background p-3 text-foreground">
-        <BasicDarkTable />
-      </div>
-    ),
-    group: "Basic",
-    code: `
-export default function BasicDarkTable() {
-  return (
-    <div className="rounded-lg border border-gray-200 dark:border-gray-800">
-      <table className="min-w-full text-left text-sm text-gray-800 dark:text-gray-200">
-        <thead className="bg-gray-100 text-gray-700 dark:bg-neutral-900 dark:text-gray-300">
-          <tr>
-            <th className="px-4 py-2 font-semibold">Product</th>
-            <th className="px-4 py-2 font-semibold">Price</th>
-            <th className="px-4 py-2 font-semibold">Stock</th>
-          </tr>
-        </thead>
-        <tbody className="divide-y divide-gray-200 dark:divide-gray-800">
-          <tr className="bg-white dark:bg-neutral-950/40">
-            <td className="px-4 py-2">Headphones</td>
-            <td className="px-4 py-2">$89.00</td>
-            <td className="px-4 py-2">In Stock</td>
-          </tr>
-          <tr className="bg-white dark:bg-neutral-950/60">
-            <td className="px-4 py-2">Keyboard</td>
-            <td className="px-4 py-2">$129.00</td>
-            <td className="px-4 py-2">Low</td>
-          </tr>
-          <tr className="bg-white dark:bg-neutral-950/40">
-            <td className="px-4 py-2">Mouse</td>
-            <td className="px-4 py-2">$49.00</td>
-            <td className="px-4 py-2">Out</td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
-  );
-}
-    `.trim(),
-  },
+
   {
     id: "striped-rows",
     title: "Striped Rows",
     description: "Alternating row colors for readability.",
     preview: <StripedRowsTable />,
     group: "Basic",
-    code: `
-export default function StripedRowsTable() {
+    code: `export default function StripedRowsTable() {
   return (
-    <table className="min-w-full divide-y divide-gray-200 text-left text-sm">
-      <thead className="bg-gray-50">
+    <table className="min-w-full divide-y divide-border text-left text-sm">
+      <thead className="bg-muted">
         <tr>
-          <th className="px-4 py-2 font-semibold text-gray-600">Project</th>
-          <th className="px-4 py-2 font-semibold text-gray-600">Status</th>
-          <th className="px-4 py-2 font-semibold text-gray-600">Owner</th>
-          <th className="px-4 py-2 font-semibold text-gray-600">Due</th>
+          <th className="px-4 py-2 font-semibold text-muted-foreground">
+            Project
+          </th>
+          <th className="px-4 py-2 font-semibold text-muted-foreground">
+            Status
+          </th>
+          <th className="px-4 py-2 font-semibold text-muted-foreground">
+            Owner
+          </th>
+          <th className="px-4 py-2 font-semibold text-muted-foreground">Due</th>
         </tr>
       </thead>
-      <tbody className="divide-y divide-gray-200">
-        <tr className="odd:bg-white even:bg-gray-50">
+      <tbody className="divide-y divide-border">
+        <tr className="odd:bg-none even:bg-muted">
           <td className="px-4 py-2">Homepage Redesign</td>
-          <td className="px-4 py-2"><span className="inline-flex rounded-full bg-green-100 px-2 py-0.5 text-xs font-medium text-green-700">Complete</span></td>
+          <td className="px-4 py-2">
+            <span className="inline-flex rounded-full bg-emerald-100 px-2 py-0.5 text-xs font-medium text-emerald-500">
+              Complete
+            </span>
+          </td>
           <td className="px-4 py-2">Alex</td>
           <td className="px-4 py-2">May 10</td>
         </tr>
-        <tr className="odd:bg-white even:bg-gray-50">
+        <tr className="odd:bg-none even:bg-muted">
           <td className="px-4 py-2">Mobile App</td>
-          <td className="px-4 py-2"><span className="inline-flex rounded-full bg-yellow-100 px-2 py-0.5 text-xs font-medium text-yellow-700">In Progress</span></td>
+          <td className="px-4 py-2">
+            <span className="inline-flex rounded-full bg-yellow-100 px-2 py-0.5 text-xs font-medium text-yellow-700">
+              In Progress
+            </span>
+          </td>
           <td className="px-4 py-2">Sam</td>
           <td className="px-4 py-2">Jun 01</td>
         </tr>
-        <tr className="odd:bg-white even:bg-gray-50">
+        <tr className="odd:bg-none even:bg-muted">
           <td className="px-4 py-2">Marketing Campaign</td>
-          <td className="px-4 py-2"><span className="inline-flex rounded-full bg-blue-100 px-2 py-0.5 text-xs font-medium text-blue-700">Queued</span></td>
+          <td className="px-4 py-2">
+            <span className="inline-flex rounded-full bg-blue-100 px-2 py-0.5 text-xs font-medium text-blue-700">
+              Queued
+            </span>
+          </td>
           <td className="px-4 py-2">Riley</td>
           <td className="px-4 py-2">Jul 15</td>
         </tr>
@@ -392,7 +486,7 @@ export default function StripedRowsTable() {
     </table>
   );
 }
-    `.trim(),
+`.trim(),
   },
   {
     id: "compact",
@@ -400,16 +494,23 @@ export default function StripedRowsTable() {
     description: "Dense spacing for data-heavy tables.",
     preview: <CompactTable />,
     group: "Basic",
-    code: `
-export default function CompactTable() {
+    code: `export default function CompactTable() {
   return (
     <table className="min-w-full border-separate border-spacing-0 text-left text-xs">
       <thead>
         <tr>
-          <th className="sticky top-0 bg-white px-3 py-2 font-semibold text-gray-700">ID</th>
-          <th className="sticky top-0 bg-white px-3 py-2 font-semibold text-gray-700">Metric</th>
-          <th className="sticky top-0 bg-white px-3 py-2 font-semibold text-gray-700">Value</th>
-          <th className="sticky top-0 bg-white px-3 py-2 font-semibold text-gray-700">Delta</th>
+          <th className="sticky top-0  px-3 py-2 font-semibold text-foreground">
+            ID
+          </th>
+          <th className="sticky top-0 px-3 py-2 font-semibold text-foreground">
+            Metric
+          </th>
+          <th className="sticky top-0 px-3 py-2 font-semibold text-foreground">
+            Value
+          </th>
+          <th className="sticky top-0 px-3 py-2 font-semibold text-foreground">
+            Delta
+          </th>
         </tr>
       </thead>
       <tbody>
@@ -419,7 +520,7 @@ export default function CompactTable() {
           <td className="px-3 py-1.5">12,450</td>
           <td className="px-3 py-1.5 text-green-600">+8%</td>
         </tr>
-        <tr className="bg-gray-50">
+        <tr className="bg-muted">
           <td className="px-3 py-1.5">A-02</td>
           <td className="px-3 py-1.5">Signups</td>
           <td className="px-3 py-1.5">1,248</td>
@@ -435,7 +536,7 @@ export default function CompactTable() {
     </table>
   );
 }
-    `.trim(),
+`.trim(),
   },
   {
     id: "cards-on-mobile",
@@ -449,17 +550,21 @@ export default function CompactTable() {
     <div className="flow-root">
       <div className="py-2">
         <div className="inline-block min-w-full align-middle px-4">
-          <table className="hidden min-w-full divide-y divide-gray-200 text-left text-sm sm:table">
-            <thead className="bg-gray-50">
+          <table className="hidden min-w-full divide-y divide-border text-left text-sm sm:table">
+            <thead className="bg-muted">
               <tr>
-                <th className="px-4 py-2 font-semibold text-gray-600">Name</th>
-                <th className="px-4 py-2 font-semibold text-gray-600">
+                <th className="px-4 py-2 font-semibold text-muted-foreground">
+                  Name
+                </th>
+                <th className="px-4 py-2 font-semibold text-muted-foreground">
                   Amount
                 </th>
-                <th className="px-4 py-2 font-semibold text-gray-600">Date</th>
+                <th className="px-4 py-2 font-semibold text-muted-foreground">
+                  Date
+                </th>
               </tr>
             </thead>
-            <tbody className="divide-y divide-gray-200">
+            <tbody className="divide-y divide-border">
               <tr>
                 <td className="px-4 py-2">Payment from Olivia Rhye</td>
                 <td className="px-4 py-2">$20.00</td>
@@ -473,19 +578,23 @@ export default function CompactTable() {
             </tbody>
           </table>
           <ul role="list" className="grid grid-cols-1 gap-3 sm:hidden">
-            <li className="rounded-lg border border-gray-200 p-3 break-words">
-              <div className="text-sm font-medium text-gray-900">
+            <li className="rounded-lg border p-3 break-words">
+              <div className="text-sm font-medium text-foreground">
                 Payment from Olivia Rhye
               </div>
-              <div className="mt-1 text-sm text-gray-700">$20.00</div>
-              <div className="mt-1 text-xs text-gray-500">Jan 22, 2024</div>
+              <div className="mt-1 text-sm text-foreground">$20.00</div>
+              <div className="mt-1 text-xs text-muted-foreground">
+                Jan 22, 2024
+              </div>
             </li>
-            <li className="rounded-lg border border-gray-200 p-3 break-words">
-              <div className="text-sm font-medium text-gray-900">
+            <li className="rounded-lg border p-3 break-words">
+              <div className="text-sm font-medium text-foreground">
                 Payment from Lana Steiner
               </div>
-              <div className="mt-1 text-sm text-gray-700">$5.00</div>
-              <div className="mt-1 text-xs text-gray-500">Jan 15, 2024</div>
+              <div className="mt-1 text-sm text-foreground">$5.00</div>
+              <div className="mt-1 text-xs text-muted-foreground">
+                Jan 15, 2024
+              </div>
             </li>
           </ul>
         </div>
@@ -503,29 +612,35 @@ export default function CompactTable() {
     group: "Basic",
     code: `export default function WithActionsTable() {
   return (
-    <table className="min-w-full divide-y divide-gray-200 text-left text-sm">
-      <thead className="bg-gray-50">
+    <table className="min-w-full divide-y divide-border text-left text-sm">
+      <thead className="bg-muted">
         <tr>
-          <th className="px-4 py-2 font-semibold text-gray-600">User</th>
-          <th className="px-4 py-2 font-semibold text-gray-600">Role</th>
-          <th className="px-4 py-2 font-semibold text-gray-600">Status</th>
+          <th className="px-4 py-2 font-semibold text-muted-foreground">
+            User
+          </th>
+          <th className="px-4 py-2 font-semibold text-muted-foreground">
+            Role
+          </th>
+          <th className="px-4 py-2 font-semibold text-muted-foreground">
+            Status
+          </th>
           <th className="px-4 py-2" />
         </tr>
       </thead>
-      <tbody className="divide-y divide-gray-200">
+      <tbody className="divide-y divide-border">
         <tr>
           <td className="px-4 py-2">Ava Williams</td>
           <td className="px-4 py-2">Editor</td>
           <td className="px-4 py-2">
-            <span className="inline-flex rounded-full bg-green-100 px-2 py-0.5 text-xs font-medium text-green-700">
+            <span className="inline-flex rounded-full bg-secondary px-2 py-0.5 text-xs font-medium  text-emerald-500">
               Active
             </span>
           </td>
           <td className="px-4 py-2 text-right">
-            <button className="rounded-md border px-2 py-1 text-xs hover:bg-gray-100">
+            <button className="rounded-md border px-2 py-1 text-xs hover:bg-muted">
               Edit
             </button>
-            <button className="ml-2 rounded-md border px-2 py-1 text-xs hover:bg-gray-100 ">
+            <button className="ml-2 rounded-md border px-2 py-1 text-xs hover:bg-muted ">
               Delete
             </button>
           </td>
@@ -534,15 +649,15 @@ export default function CompactTable() {
           <td className="px-4 py-2">Noah Patel</td>
           <td className="px-4 py-2">Viewer</td>
           <td className="px-4 py-2">
-            <span className="inline-flex rounded-full bg-gray-200 px-2 py-0.5 text-xs font-medium text-gray-700">
+            <span className="inline-flex rounded-full bg-muted px-2 py-0.5 text-xs font-medium text-orange-500">
               Invited
             </span>
           </td>
           <td className="px-4 py-2 text-right">
-            <button className="rounded-md border px-2 py-1 text-xs hover:bg-gray-100">
+            <button className="rounded-md border px-2 py-1 text-xs hover:bg-muted">
               Edit
             </button>
-            <button className="ml-2 rounded-md border px-2 py-1 text-xs hover:bg-gray-100">
+            <button className="ml-2 rounded-md border px-2 py-1 text-xs hover:bg-muted">
               Delete
             </button>
           </td>
@@ -623,12 +738,12 @@ export default function FilterableTable() {
           value={query}
           onChange={(e) => setQuery(e.target.value)}
           placeholder="Search name, title, email, role..."
-          className="w-full rounded-md border border-gray-300 px-3 py-2 text-sm placeholder:text-gray-400"
+          className="w-full rounded-md border px-3 py-2 text-sm placeholder:text-muted-foreground outline-none"
         />
       </div>
 
-      <table className="min-w-full divide-y divide-gray-200 text-left text-sm">
-        <thead className="bg-gray-50 text-gray-700">
+      <table className="min-w-full divide-y divide-border text-left text-sm">
+        <thead className="bg-muted text-muted-foreground">
           <tr>
             <th className="px-4 py-2 font-semibold">Name</th>
             <th className="px-4 py-2 font-semibold">Title</th>
@@ -636,7 +751,7 @@ export default function FilterableTable() {
             <th className="px-4 py-2 font-semibold">Role</th>
           </tr>
         </thead>
-        <tbody className="divide-y divide-gray-200">
+        <tbody className="divide-y divide-border">
           {filtered.map((p) => (
             <tr key={p.email}>
               <td className="px-4 py-2">{p.name}</td>
@@ -648,7 +763,7 @@ export default function FilterableTable() {
           {filtered.length === 0 && (
             <tr>
               <td
-                className="px-4 py-6 text-center text-sm text-gray-500"
+                className="px-4 py-6 text-center text-sm text-muted-foreground"
                 colSpan={4}
               >
                 No results
@@ -660,7 +775,6 @@ export default function FilterableTable() {
     </div>
   );
 }
-
-    `.trim(),
+`.trim(),
   },
 ];

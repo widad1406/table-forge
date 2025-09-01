@@ -1,7 +1,12 @@
 "use client";
 
-import { Check, Copy, ChevronDown } from "lucide-react";
 import { useState } from "react";
+import { Check, Copy } from "lucide-react";
+import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
+import {
+  oneDark,
+  oneLight,
+} from "react-syntax-highlighter/dist/esm/styles/prism";
 import { Button } from "@/components/ui/button";
 import {
   Card,
@@ -10,6 +15,7 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
+import { useTheme } from "next-themes";
 
 type TableExampleProps = {
   title: string;
@@ -25,6 +31,8 @@ export default function TableExample({
   code,
 }: TableExampleProps) {
   const [copied, setCopied] = useState(false);
+  const [tab, setTab] = useState<"preview" | "code">("preview");
+  const { theme } = useTheme();
 
   async function handleCopy() {
     try {
@@ -36,47 +44,70 @@ export default function TableExample({
     }
   }
 
+  const CodeBlock = (
+    <SyntaxHighlighter
+      language="tsx"
+      style={theme === "dark" ? oneDark : oneLight}
+      customStyle={{
+        margin: 0,
+        borderRadius: 8,
+        padding: "0.75rem",
+        maxHeight: "500px",
+      }}
+      wrapLongLines
+      wrapLines
+      showLineNumbers
+    >
+      {code.trim()}
+    </SyntaxHighlighter>
+  );
+
+  const PreviewBlock = (
+    <div className="overflow-x-auto">
+      <div className="min-w-full">{preview}</div>
+    </div>
+  );
+
   return (
     <Card>
-      <CardHeader className="flex flex-row items-start justify-between gap-3">
+      <CardHeader className="flex flex-row items-center justify-between gap-3">
         <div>
           <CardTitle className="text-base leading-6">{title}</CardTitle>
           {description ? (
             <CardDescription className="mt-1">{description}</CardDescription>
           ) : null}
         </div>
-        <Button type="button" onClick={handleCopy} aria-label="Copy JSX">
-          {copied ? (
-            <>
-              Copied
-              <Check className="text-emerald-500" />
-            </>
-          ) : (
-            <>
-              Copy
-              <Copy className="size-4" />
-            </>
-          )}
-        </Button>
       </CardHeader>
+
       <CardContent>
-        <div className="overflow-x-auto">
-          <div className="min-w-full">{preview}</div>
+        <div className="flex w-full justify-between">
+          <Button
+            type="button"
+            variant="outline"
+            size="sm"
+            onClick={() => setTab(tab === "preview" ? "code" : "preview")}
+          >
+            {tab === "preview" ? "Show Code" : "Show Preview"}
+          </Button>
+          <Button
+            type="button"
+            onClick={handleCopy}
+            aria-label="Copy JSX"
+            variant="outline"
+            size="sm"
+          >
+            {copied ? (
+              <Check className="text-emerald-500" />
+            ) : (
+              <Copy className="size-4" />
+            )}
+          </Button>
+        </div>
+
+        <div className="m-0 pt-4">
+          {tab === "preview" ? PreviewBlock : CodeBlock}
         </div>
       </CardContent>
-      <div className="border-t">
-        <details className="group p-4">
-          <Button asChild variant="link" size="sm">
-            <summary className="inline-flex cursor-pointer select-none items-center gap-1">
-              Show Code
-              <ChevronDown className="size-4 transition-transform group-open:rotate-180" />
-            </summary>
-          </Button>
-          <pre className="mt-3 overflow-x-auto rounded-md bg-muted p-3 text-xs text-foreground ">
-            <code>{code.trim()}</code>
-          </pre>
-        </details>
-      </div>
     </Card>
   );
 }

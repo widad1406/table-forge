@@ -61,12 +61,12 @@ export default function FilterableTable() {
           value={query}
           onChange={(e) => setQuery(e.target.value)}
           placeholder="Search name, title, email, role..."
-          className="w-full rounded-md border border-gray-300 px-3 py-2 text-sm placeholder:text-gray-400"
+          className="w-full rounded-md border px-3 py-2 text-sm placeholder:text-muted-foreground outline-none"
         />
       </div>
 
-      <table className="min-w-full divide-y divide-gray-200 text-left text-sm">
-        <thead className="bg-gray-50 text-gray-700">
+      <table className="min-w-full divide-y divide-border text-left text-sm">
+        <thead className="bg-muted text-muted-foreground">
           <tr>
             <th className="px-4 py-2 font-semibold">Name</th>
             <th className="px-4 py-2 font-semibold">Title</th>
@@ -74,7 +74,7 @@ export default function FilterableTable() {
             <th className="px-4 py-2 font-semibold">Role</th>
           </tr>
         </thead>
-        <tbody className="divide-y divide-gray-200">
+        <tbody className="divide-y divide-border">
           {filtered.map((p) => (
             <tr key={p.email}>
               <td className="px-4 py-2">{p.name}</td>
@@ -86,7 +86,7 @@ export default function FilterableTable() {
           {filtered.length === 0 && (
             <tr>
               <td
-                className="px-4 py-6 text-center text-sm text-gray-500"
+                className="px-4 py-6 text-center text-sm text-muted-foreground"
                 colSpan={4}
               >
                 No results
