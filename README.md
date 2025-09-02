@@ -17,7 +17,7 @@ Ready-to-use, accessible table components built with Tailwind CSS and Modern UI.
 
 - Minimal, production-ready examples — includes basic, sorting, and filtering tables
 - One-click copy — grab JSX snippets instantly with copy-to-clipboard
-- Responsive & dark-mode ready — tables adapt seamlessly to different themes and screens
+- Great for dashboards and admin panels
 - Utility-first styling — built entirely with Tailwind CSS v4
 - Zero dependencies — just pure React + Tailwind, nothing extra
 
