@@ -188,7 +188,7 @@ export function DataTable<T>(props: DataTableProps<T>) {
 
 ### 3) Usage
 
-#### 3a) Client example with React Query (useQuery) or any data fetching library of your choice
+#### Client example with React Query (useQuery) or any data fetching library of your choice
 
 ```tsx
 // UsersClient.tsx
@@ -215,7 +215,7 @@ export default function UsersClient() {
 }
 ```
 
-#### 3b) Server component example (pass data from server)
+#### Server component example (pass data from server)
 
 ```tsx
 // UsersServer.tsx (server component)
