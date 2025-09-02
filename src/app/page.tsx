@@ -1,6 +1,6 @@
 import TablesGallery from "@/components/TablesGallery";
 import { Button } from "@/components/ui/button";
-import { Code2, Star } from "lucide-react";
+import { BookOpen, Star } from "lucide-react";
 import Link from "next/link";
 
 export default function Home() {
@@ -17,10 +17,14 @@ export default function Home() {
             100% Open Source and Free to use.
           </p>
           <div className="flex items-center justify-center gap-3">
-            <Button asChild size="lg">
-              <Link href="#gallery">
-                <Code2 />
-                Browse gallery
+            <Button asChild variant="default" size="lg">
+              <Link
+                href="https://github.com/AnmolSaini16/table-forge#how-to-use"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <BookOpen />
+                How to use
               </Link>
             </Button>
             <Button asChild variant="outline" size="lg">

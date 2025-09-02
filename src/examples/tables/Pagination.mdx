@@ -1,0 +1,22 @@
+import ExampleCard from "@/components/ExampleCard";
+import PaginatedTable from "@/components/tables/PaginatedTable";
+
+export const meta = {
+  id: "pagination-basic",
+  title: "Paginated Table",
+  description: "Table with page controls and rows-per-page selector.",
+  group: "Pagination",
+  codePath: "src/components/tables/PaginatedTable.tsx",
+};
+
+export default function Example() {
+  return (
+    <ExampleCard
+      title={meta.title}
+      description={meta.description}
+      codePath={meta.codePath}
+    >
+      <PaginatedTable />
+    </ExampleCard>
+  );
+}

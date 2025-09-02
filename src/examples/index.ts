@@ -15,8 +15,14 @@ import TopControlsSortable, {
   meta as metaTopControls,
 } from "./tables/TopControlsSortable.mdx";
 import Filterable, { meta as metaFilterable } from "./tables/Filterable.mdx";
+import Pagination, { meta as metaPagination } from "./tables/Pagination.mdx";
 
-export type ExampleGroup = "Basic" | "Sorting" | "Filtering" | "Advanced";
+export type ExampleGroup =
+  | "Basic"
+  | "Sorting"
+  | "Filtering"
+  | "Pagination"
+  | "Advanced";
 
 export interface ExampleMeta {
   id: string;
@@ -85,5 +91,10 @@ export const examples: ExampleItem[] = [
     ...validateMeta(metaFilterable, "Filterable"),
     Component: Filterable,
     codePath: metaFilterable.codePath,
+  },
+  {
+    ...validateMeta(metaPagination, "Pagination"),
+    Component: Pagination,
+    codePath: metaPagination.codePath,
   },
 ];

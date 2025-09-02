@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
-import ThemeToggle from "@/components/ThemeToggle";
+import ThemeToggle from "@/components/theme/ThemeToggle";
 import { Heart, Table } from "lucide-react";
 
 export default function Navbar() {
@@ -14,7 +14,7 @@ export default function Navbar() {
         <div className="flex items-center gap-1.5 sm:gap-2">
           <Button asChild variant="secondary" className="hidden sm:inline-flex">
             <Link
-              href="https://buymeacoffee.com/sainianmol0"
+              href="https://buymeacoffee.com/anmoldeep_singh"
               target="_blank"
               rel="noopener noreferrer"
               aria-label="Buy me a coffee"
@@ -30,7 +30,7 @@ export default function Navbar() {
             className="inline-flex sm:hidden"
           >
             <Link
-              href="https://buymeacoffee.com/sainianmol0"
+              href="https://buymeacoffee.com/anmoldeep_singh"
               target="_blank"
               rel="noopener noreferrer"
               aria-label="Buy me a coffee"
